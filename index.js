@@ -1,37 +1,44 @@
-
-   
-  class Deck {
+  // class Deck {
     
-    constructor() {
-        this.deck = [];
-  
+  //   constructor() 
+  function card (suit,value) {
+        // this.deck = [];
+  let deck = [];
       const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
       const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
     
       for (let suit in suits) {
         for (let value in values) {
-          this.deck.push(`${values[value]} of ${suits[suit]}`);
+          // this.deck.push(`${values[value]} of ${suits[suit]}`);
+                     deck.push(`${values[value]} of ${suits[suit]}`);
+
+
         }
       }
+      console.log(deck);
+      return deck;
     }
-    
+
   
-    shuffle() {
-      const { deck } = this;
-      let m = deck.length, i;
   
-      while(m){
-        i = Math.floor((Math.random()  * m--)/2);
+  //   shuffle(){
+  //     const { deck } = this;
+  //     let m = deck.length, i;
   
-        [deck[m], deck[i]] = [deck[i], deck[m]];
-      }
+  //     while(m){
+  //       i = Math.floor((Math.random()  * m--)/2);
   
-      return this;
-    }
-  }
-var  deck1 = new Deck;
-console.log(deck1.deck);
-deck1.shuffle();
+  //       [deck[m], deck[i]] = [deck[i], deck[m]];
+  //     }
+  
+  //     return this;
+  //   }
+  //   return shuffle();
+  // }
+//var deck1 = new Deck;
+var deck1 = [];
+//console.log(deck);
+//deck1.shuffle();
 deck2=[];
 // console.log(deck1.deck);
 
@@ -50,7 +57,7 @@ var players = [ "user", " computer"];
 
 // 
  
-let card = Deck ;
+let cards = card();
 var user = [];
 var comp = [];
 var card_count = 0;
@@ -101,7 +108,22 @@ return count;
 
 
 function hit() {
-  deck2.push(deck1);
+  user.push(cards.pop());
   console.log(deck2,"hi");
-  // comp.push(card.pop());
+   comp.push(cards.pop());
 }
+
+function shuffle(){
+  const { deck } = this;
+  let m = deck.length, i;
+
+  while(m){
+    i = Math.floor((Math.random()  * m--)/2);
+
+    [deck[m], deck[i]] = [deck[i], deck[m]];
+  }
+
+  return this;
+}
+return shuffle;
+// console.log(shuffle);
