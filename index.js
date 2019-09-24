@@ -1,129 +1,30 @@
-  // class Deck {
-    
-  //   constructor() 
-  function card (suit,value) {
-        // this.deck = [];
-  let deck = [];
-      const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
-      const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-    
-      for (let suit in suits) {
-        for (let value in values) {
-          // this.deck.push(`${values[value]} of ${suits[suit]}`);
-                     deck.push(`${values[value]} of ${suits[suit]}`);
-
-
-        }
-      }
-      console.log(deck);
-      return deck;
-    }
-
+var deck = []
+function card () {
   
-  
-  //   shuffle(){
-  //     const { deck } = this;
-  //     let m = deck.length, i;
-  
-  //     while(m){
-  //       i = Math.floor((Math.random()  * m--)/2);
-  
-  //       [deck[m], deck[i]] = [deck[i], deck[m]];
-  //     }
-  
-  //     return this;
-  //   }
-  //   return shuffle();
-  // }
-//var deck1 = new Deck;
-var deck1 = [];
-//console.log(deck);
-//deck1.shuffle();
-deck2=[];
-// console.log(deck1.deck);
+// let deck = [];
+const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 
-var players = [ "user", " computer"];
-
-// var players = deck1.slice(0,12); 
-//  console.log(deck1.deck);
-
-
-/// Distribute The cards between the player and computer
-// var players = [
-//   'user',
-//   'computer'];
-
-//var PLAYERS_LENGTH = players.length;
-
-// 
- 
-let cards = card();
-var user = [];
-var comp = [];
-var card_count = 0;
-
-var count = 0 , countp = 0 ,countc = 0;
-  
-//  generating cards for player
-
-hit();
-hit();
-console.log("cards for player");
-console.log(user);
-countp = count1();
-console.log("User: "+countp+ "\n");
-console.log("cards for computer");
-console.log(comp);
-// countc = count2();
-console.log("computer :"+countc);
-
-//Counting total cards of Player
-function count1() {
-  for (var s = 0; s < user.length; s++) 
-  {
-    count+=user[s].value;
-
-    if(user[0].name=='A' && user[s].name=='K'|| user[0].name=='A' && user[s].name=='Q'||
-    user[0].name=='A' && user[s].name=='J'||user[0].name=='K' && user[s].name=='A'||
-    user[0].name=='Q' && user[s].name=='A'||user[0].name=='J' && user[s].name=='A')
-    {  console.log("\n B L A C K J A C K !\n Player Won!")
-    }
-
-    else if (user[s].name == "A" && count<11)
-    {
-      user[s].value=11;     
-      console.log("-- A is 11 --")
-      count+=10;
-    }
-    else if(user[s].value == "A" && count>11)
-    {
-      user[s].value=1;
-      console.log("-- A is 1 --")
-    }
-
-    
+for (let suit in suits) {
+  for (let value in values) {
+    deck.push(`${values[value]} of ${suits[suit]}`);
+  }
+} 
+console.log(deck);
+return deck;
 }
-return count;
-}
+card();
+function shuffle(deck){ 
+  // console.log(shuffle);
+  // const  deck  = this.deck;
+  var m = deck.length, i;
 
-
-function hit() {
-  user.push(cards.pop());
-  console.log(deck2,"hi");
-   comp.push(cards.pop());
-}
-
-function shuffle(){
-  const { deck } = this;
-  let m = deck.length, i;
-
-  while(m){
-    i = Math.floor((Math.random()  * m--)/2);
+  while (m) {
+    i = Math.floor(Math.random() * m--);
 
     [deck[m], deck[i]] = [deck[i], deck[m]];
   }
-
-  return this;
+  return deck;
 }
-return shuffle;
-// console.log(shuffle);
+shuffle(deck);
+console.log(deck)
