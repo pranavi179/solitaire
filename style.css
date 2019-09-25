@@ -1,0 +1,16 @@
+.card{
+    height:5cm;
+    width:3cm;
+    border: 1px solid black;
+    margin-left:3px;
+    float :left;
+    margin-top:10px;
+}
+.cardscontainer{
+    height:5.5cm;
+    width:41cm;
+    border:1px solid black;
+}
+body{
+    background-color:lightgrey;
+}
