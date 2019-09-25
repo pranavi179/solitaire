@@ -68,8 +68,8 @@ function sol (){
    
    var s = [];      // new stack
 
+    
    
-   var w = [];          // 2nd stack 
 
     deck = create(deck,suits);
     deck = shuffle(deck);
@@ -134,79 +134,67 @@ console.log(user1);
 console.log(computer);
 
 
+//creating the stack to remaining elements
+rdeck = deck1.slice(26,52);
+console.log(rdeck);
 
-// var players = [ "user", " computer"];
-// let cards = sol();
-// var user = [];
-// var comp = [];
-// var card_count = 0;
+// picking the card
+// droping the card in new stack
 
-// var count = 0 , countu = 0 ,countc = 0;
-// //  generating cards for player
+var w = [];          // droping stack stack
 
-// hit();
-// hit();
-// console.log("cards for player");
-// console.log(user);
-// countu = count1();
-// console.log("User: "+countu+ "\n");
-// //distribute();
-// console.log("cards for computer");
-// console.log(comp);
-// countc = count2();
-// console.log("computer :"+countc);
+function pick() {
+   var pdeck = rdeck.pop();
+   console.log(rdeck);
+}
+function drop(i) {
+  // var ddeck = hdeck[i];
+   // console.log(ddeck);
+   // rdeck.push(ddeck.pop());
+   var ddeck = prompt(" which card to drop?");
+   if(ddeck != hdeck[i])
+   {
+      rdeck.push(ddeck.pop());
+      console.log(ddeck);
+
+   }
+}
+
+// to do search function
+ function search() {
+    
+ }
 
 
-// function hit() {
-//  user.push(cards);
-//   //console.log(deck2,"hi");
-//    comp.push(cards);
-// }
-
-//  function count1() {
-//    console.log("hi")
-
-//  // var cards = card;
+ var players = [ "user", " comp"];
+ // user 
+ console.log("cards for player");
+ let user = user1;
+ user.push(user1);
+  console.log(user);
   
-//   var stack = [];
-//   let m = deck.length ;
-  
-//   // r = Math.floor(((Math.random() *  m-- )/ 4));
-//   for (s = 1 ; s<= deck.length ; s++)
-//   {
-//     if(s.length <= 13 ){
-//       stack.pop(deck[s]);
-//       stack.push(stack.pop());
-//     }
-//   }
 
-//  //stack.push(r);
-//  console.log("User: "+countu+ "\n");
-
-//    console.log(stack);
-//   user.push(cards);
-//    console.log(deck.length);
-// }
+// computer
+  console.log("cards for computer");
+  let comp = computer;
+  comp.push(computer);
+  console.log(comp);
 
 
-// function count2() {
-//   console.log("hello");
-//   var cards = card;
-//   var stack = [];
-//   q = Math.floor((Math.random(deck) / 4));
-//   stack.push(q);
-//    console.log(stack);
-// }
 
 
-          
+
+
+
+
+   
 // function isEqual() 
 // { 
 //    // let stack = shuffle();
 
 //   // if length is not equal 
 //   //if(a.length!=b.length) 
-//   if(deck.length==shuffle.length) {
+//   if(deck.length!=shuffle.length) {
 //    for(var i=0;i<deck.length;i++) 
 //    if(deck[i]==shuffle[i]) 
 //     return "false"; 
